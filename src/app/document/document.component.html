@@ -1,9 +1,21 @@
-
-  <div>
-    <ul>
-      <li *ngFor="let document of documentList">
-        {{document.id}}
-      </li>
-    </ul>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">File Path</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let document of documentList">
+        <td>{{document.id}}</td>
+        <td><img src="data:image/jpg;base64,{{document.file}}" class="img-fluid" alt={{document.name}}></td>
+        <td>{{document.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-group">
+    <label for="avatar">Dosya Seçiniz</label>
+    <input type="file" id="fileUpload" (change)="onFileChange($event)" #fileInput>
+    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
   </div>
-

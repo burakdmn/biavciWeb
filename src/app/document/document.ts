@@ -4,17 +4,17 @@ export class Document {
     create_user: number;
     update_date: Date;
     update_user: number;
-    status: number;
+    status: boolean;
     version: number;
-    comments: number[];
-    likes: number[];
+    comments: Object[];
+    likes: Object[];
     name: string;
-    file_path: string;
+    file: Object[];
 
     constructor(
-        id: number, create_date: Date, create_user: number, update_date: Date, update_user: number, status: number, version: number,
+        id: number, create_date: Date, create_user: number, update_date: Date, update_user: number, status: boolean, version: number,
         comments: number[], likes: number[]
-        , name: string, file_path: string) {
+        , name: string, file: Object[]) {
             this.id = id;
             this.create_date = create_date;
             this.create_user = create_user;
@@ -25,6 +25,6 @@ export class Document {
             this.comments = comments;
             this.likes = likes;
             this.name = name;
-            this.file_path = file_path;
+            this.file = file;
       }
 }
